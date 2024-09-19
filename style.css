@@ -1,0 +1,146 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full page layout */
+body {
+  font-family: "Georgia", serif;
+  background-color: #f5f0e6; /* Soft beige color resembling book pages */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container for the book-like display */
+.book-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Book design with border, padding, and shadow */
+.book {
+  background-color: #fdf8e4; /* Pale yellow resembling old paper */
+  width: 80%;
+  max-width: 600px;
+  padding: 30px;
+  border: 2px solid #d1c7b5; /* Light brown border */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Image styling */
+#story-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Small shadow for images */
+}
+
+/* Story text styling */
+#story-text {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: #333;
+  padding: 20px;
+  text-align: justify;
+  font-style: italic;
+  background-color: #faf3e0; /* Off-white background for the text area */
+  border: 1px solid #e0d4b8; /* Border to simulate a page outline */
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Soft inner shadow */
+}
+
+/* Choices buttons styling */
+.choices {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.choice-btn {
+  background: linear-gradient(135deg, #ff6b6b, #d72d2d);
+  color: white;
+  border: none;
+  padding: 12px 24px; /* Increased padding for a better look */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 1.1rem; /* Slightly larger font */
+  transition: background 0.3s, transform 0.2s; /* Transition for background and transform */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.choice-btn:hover {
+  background: linear-gradient(135deg, #ff8282, #d72d2d);
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.choice-btn:active {
+  transform: translateY(0); /* Reset lift on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slightly reduce shadow on click */
+}
+
+.choice-btn:disabled {
+  background-color: #ccc; /* Gray background for disabled state */
+  cursor: not-allowed;
+  box-shadow: none; /* Remove shadow when disabled */
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red; /* Heart color */
+  opacity: 0;
+  animation: rise 1s forwards, fade 1s forwards; /* Animation for rising and fading */
+  transform: rotate(-45deg);
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red; /* Heart color */
+  border-radius: 50%; /* Circle shape */
+}
+
+.heart:before {
+  top: -10px; /* Position the top left circle */
+  left: 0;
+}
+
+.heart:after {
+  left: 10px; /* Position the top right circle */
+  top: 0;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
